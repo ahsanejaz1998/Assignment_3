@@ -15,7 +15,11 @@ class Student(db.Model):
     
 @app.route('/')
 def index():
-    return redirect(url_for('get_all_students'))    
+    return redirect(url_for('get_all_students'))
+
+@app.route('/test')
+def testing():
+    return "<p> testing new route</p>"    
 
 @app.route('/student/<int:student_id>', methods=['GET'])
 def get_student(student_id):
